@@ -20,6 +20,6 @@ Step 4:
 ```
 cd ..
 cd frontend
-npm run dev //
+npm run dev // run frontend of the code and connect with backend
 ```
 
