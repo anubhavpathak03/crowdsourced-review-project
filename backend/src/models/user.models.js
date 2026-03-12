@@ -9,9 +9,7 @@ const userSchema = new mongoose.Schema({
 }, { timestamps: true });
 
 // hash password before saving
-userSchema.pre('save', async function (next) {
-  // using an async function means mongoose won't pass a `next` callback,
-  // so we can simply return when we're done rather than calling next().
+userSchema.pre('save', async function () {
   if (!this.isModified('password')) return;
   this.password = await bcrypt.hash(this.password, 10);
 });
